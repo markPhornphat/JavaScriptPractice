@@ -37,7 +37,7 @@ console.log(arr2);
 /* ----------------------------------------------Pop() to pop last value in array off-------------------------------------------- */
 arr1 = [1,2,3];
 const arr3 = arr1.pop();
-console.log(arr3); //Output: [1,2]
+console.log(arr3); //Output: [1,2]    
 console.log(arr1); //Output: 3 
 /* ----------------------------------------------Shift() to pop first value in array off-------------------------------------------- */
 arr2 = [["Mark", 1], ["Mo", 2]];
@@ -65,3 +65,30 @@ function swapFunc(x,y)
   console.log("Swap: X = " + x+ " Y = " + y);
 }
 swapFunc(56,93);
+/* ----------------------------------------------Use "return" on function-------------------------------------------- */
+function multiplyFive(num)
+{
+  return 5*num;
+}
+const answer1 = multiplyFive(2);
+console.log(answer1);
+/* ----------------------------------------------Global scope --> declare variables without let, const-------------------------------------------- */
+let myGlobal = 10;
+
+function fun1() {
+  oopsGlobal = 5;
+}
+
+function fun2() {
+  let outp = "";
+  if (typeof myGlobal != "undefined") {
+    outp += "myGlobal: " + myGlobal;
+  }
+  if (typeof oopsGlobal != "undefined") {
+    outp += " oopsGlobal: " + oopsGlobal;
+  }
+  console.log(outp);
+}
+
+fun1()
+fun2();
