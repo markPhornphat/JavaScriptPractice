@@ -347,23 +347,133 @@ function golfScore(par, strokes) {
 }
 golfScore(5, 4); // Birdie
 golfScore(4, 3); //Birdie
+/* --------------------------------------------- Switch Case --------------------------------------------- */
+function caseInSwitch(val) {
+  switch(val)
+  {
+    case 1:
+      return "alpha";
+    case 2:
+      return "beta";
+    case 3:
+      return "gamma";
+    case 4:
+      return "delta";
+  }
+}
+caseInSwitch(1);
+
+/* --------------------------------------------- Switch case with "Default" ------------------------------ */
+function switchOfStuff(val) {
+  let answer = "";
+    switch (val)
+    {
+        case "a":
+          answer = "apple";
+          break;
+        case "b":
+          answer = "bird";
+          break;
+        case "c":
+          answer = "cat";
+          break;
+        default: // If no matching statement case ==> Execute here
+          answer = "stuff";
+          break;
+    }
+  return answer;
+}
+switchOfStuff(1);
+
+/* --------------------------------------------- Switch case with OR condition--------------------- */
+function sequentialSizes(val) {
+  let answer = "";
+  switch (val)
+  {
+    case 1:
+    case 2:
+    case 3:
+      answer = "Low";  // If(val = 1 || val = 2 || val = 3) ==> answer = low
+      break; // "The following case statement(s) are executed until a 'break' "
+    case 4:
+    case 5:
+    case 6:
+      answer = "Mid";
+      break;
+    case 7:
+    case 8:
+    case 9:
+      answer = "High";
+      break;
+  }
+  return answer;
+}
+sequentialSizes(1);
+
+/* --------------------------------------------- Returning Boolean Values from Functions --------------------- */
+/* No need to use if, else anymore if want to return as boolean on functions*/
+function isLess(a,b)
+{
+  return a<b;
+}
+isLess(12,11);
 /* --------------------------------------------- Recieve output of "return" from function--------------------- */
+function abTest(a, b) {
+  if( a == 0 || b == 0)
+  {
+    return 0;
+  }
+  else if ( a<0 || b<0)
+  {
+    return undefined;
+  }
+  else 
+  {
+    return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
+  }
+}
+abTest(2,2);
 
+/* --------------------------------------------- Counting Cards ------------------------------ */
+let count = 0;
 
-/* --------------------------------------------- Recieve output of "return" from function--------------------- */
+function cc(card) {
+  // Only change code below this line
+  
+  switch(card)
+  {
+      case 2:
+      case 3:
+      case 4:
+      case 5:
+      case 6:
+        count++;
+        break;
+      case 7:
+      case 8:
+      case 9:
+        break;
+      case 10:
+      case "J":
+      case "Q":
+      case "K":
+      case "A":
+        count--;
+        break;
+  }
 
+  if (count > 0)
+  {
+    return (count + " Bet");
+  }
+  else
+  {
+    return (count + " Hold");
+  } 
+  // Only change code above this line
+}
 
-/* --------------------------------------------- Recieve output of "return" from function--------------------- */
-
-
-/* --------------------------------------------- Recieve output of "return" from function--------------------- */
-
-
-/* --------------------------------------------- Recieve output of "return" from function--------------------- */
-
-
-/* --------------------------------------------- Recieve output of "return" from function--------------------- */
-
+cc(2); cc(3); cc(7); cc('K'); cc('A');
 
 /* --------------------------------------------- Recieve output of "return" from function--------------------- */
 
