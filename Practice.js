@@ -475,22 +475,95 @@ function cc(card) {
 
 cc(2); cc(3); cc(7); cc('K'); cc('A');
 
-/* --------------------------------------------- Recieve output of "return" from function--------------------- */
+/* --------------------------------------------- JavaScript Objects--------------------------------------- */
+const myDog = {
+  // Only change code below this line
+  "name": "NamTan",
+  "legs": 4,
+  "tails": 1,
+  friends: ["Mark", "Tan"] //JS automatic change into string
 
+  // Only change code above this line
+};
 
-/* --------------------------------------------- Recieve output of "return" from function--------------------- */
+/* --------------------------------------------- Accessing Object JS with Dot and Bracket--------------------- */
+const testObj = {
+  "hat": "ballcap",
+  "shirt": "jersey",
+  "shoes": "cleats"
+};
+const Object ="shoes"
+const hatValue = testObj.hat;     
+const shirtValue = testObj["shirt"];
+const shoesValue = testObj[Object];    
 
+/* --------------------------------------------- Updating Object -------------------------------------- */
+const myDogMark = {
+  "name": "Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+myDogMark.name = "Taan"; //Update name
 
-/* --------------------------------------------- Recieve output of "return" from function--------------------- */
+/* --------------------------------------------- Add New Properties to a JavaScript Object --------------------------------------- */
+const myDog2 = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
 
+myDog.bark = "Boo!" //Add new object
+myDog["Type"] = "Golden Retriver";
 
-/* --------------------------------------------- Recieve output of "return" from function--------------------- */
+/* ---------------------------------------------Delete Properties from a JavaScript Object --------------------------------------- */
+const myDog4 = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"],
+  "bark": "woof"
+};
 
+delete myDog4["friend"];
+delete myDog4.bark;
 
-/* --------------------------------------------- Recieve output of "return" from function--------------------- */
+/* --------------------------------------------- Change Switch case, if-else to java "Object" --------------------------------------- */
+/*
+switch(val) {
+    case "alpha": 
+      result = "Adams";
+      break;
+    case "bravo": 
+      result = "Boston";
+      break;
+    case "charlie": 
+      result = "Chicago";
+      break;
+    case "delta": 
+      result = "Denver";
+      break;
+    case "echo": 
+      result = "Easy";
+      break;
+    case "foxtrot": 
+      result = "Frank";
+  }
+  return result;            // Change this one to Java Object!!!!!!!!!!!!
+*/
+function phoneticLookup(val) {
+   var lookup = {
+    "alpha": "Adams",
+    "bravo": "Boston",
+    "charlie": "Chicago",
+    "delta": "Denver",
+    "echo": "Easy",
+    "foxtrot": "Frank"
+  };
+  const result = lookup[val];
+  return result;
+}
 
-
-/* --------------------------------------------- Recieve output of "return" from function--------------------- */
-
-
-/* --------------------------------------------- Recieve output of "return" from function--------------------- */
+phoneticLookup("charlie");
+/* --------------------------------------------- JavaScript Objects--------------------------------------- */
