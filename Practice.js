@@ -504,7 +504,7 @@ const myDogMark = {
   "tails": 1,
   "friends": ["freeCodeCamp Campers"]
 };
-myDogMark.name = "Taan"; //Update name
+myDogMark.name = "Taan"; //Update name                  
 
 /* --------------------------------------------- Add New Properties to a JavaScript Object --------------------------------------- */
 const myDog2 = {
@@ -566,4 +566,150 @@ function phoneticLookup(val) {
 }
 
 phoneticLookup("charlie");
+/* --------------------------------------------- Testing Objects for Properties --------------------------------------- */
+/*
+function checkForProperty(object, property) {
+  return object.hasOwnProperty(property);
+}
+
+checkForProperty({ top: 'hat', bottom: 'pants' }, 'top'); // Output: TRUE
+checkForProperty({ top: 'hat', bottom: 'pants' }, 'middle'); // Output: FALSE
+*/
+
+//Obj: To return specific value from inputing key 
+function checkObj(obj, checkProp) {
+  if (obj.hasOwnProperty(checkProp))
+  {
+    return obj[checkProp];
+  }
+  else
+  {
+    return "Not Found";
+  }
+}
+checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "gift") //Output: pony
+checkObj({pet: "kitten", bed: "sleigh"}, "gift") //Output: Not Found
+
+/* --------------------------------------------- Objects Array --------------------------------------- */
+const myFamily = [
+  {
+    "Name": "Dad",
+    "Age": 62,
+    "Ancester": [
+      "Mark",
+      "Meen"
+    ],
+    "Marriage": true
+  },
+  {
+    "Name": "Mom",
+    "Ancester": [
+      "Mark",
+      "Meen"
+    ],
+    "Age": 53
+  },
+  {
+    "Name": "Meen",
+    "Ancester": false,
+    "Age": 23
+  }
+];
+
+
+/* --------------------------------------------- Accessing Nested Objects --------------------------------------- */
+
+const myStorage = {
+  "car": {
+    "inside": {
+      "glove box": "maps",
+      "passenger seat": "crumbs"
+     },
+    "outside": {
+      "trunk": "jack"
+    }
+  }
+};
+
+const gloveBoxContents = myStorage.car.inside["glove box"]; //Output: maps
+
+/* --------------------------------------------- Accessing Nested Arrays --------------------------------------- */
+
+const myPlants = [
+  {
+    type: "flowers",
+    list: [
+      "rose",
+      "tulip",
+      "dandelion"
+    ]
+  },
+  {
+    type: "trees",
+    list: [
+      "fir",
+      "pine",
+      "birch"
+    ]
+  }
+];
+
+const secondTree = myPlants[1].list[1];  //Output: pine
+
+/* --------------------------------------------- JavaScript Objects--------------------------------------- */
+
+
+
+/* --------------------------------------------- JavaScript Objects--------------------------------------- */
+
+
+
+/* --------------------------------------------- JavaScript Objects--------------------------------------- */
+
+
+
+/* --------------------------------------------- JavaScript Objects--------------------------------------- */
+
+
+
+/* --------------------------------------------- JavaScript Objects--------------------------------------- */
+
+
+
+/* --------------------------------------------- JavaScript Objects--------------------------------------- */
+
+
+
+/* --------------------------------------------- JavaScript Objects--------------------------------------- */
+
+
+
+/* --------------------------------------------- JavaScript Objects--------------------------------------- */
+
+
+
+/* --------------------------------------------- JavaScript Objects--------------------------------------- */
+
+
+
+/* --------------------------------------------- JavaScript Objects--------------------------------------- */
+
+
+
+/* --------------------------------------------- JavaScript Objects--------------------------------------- */
+
+
+
+/* --------------------------------------------- JavaScript Objects--------------------------------------- */
+
+
+
+/* --------------------------------------------- JavaScript Objects--------------------------------------- */
+
+
+
+/* --------------------------------------------- JavaScript Objects--------------------------------------- */
+
+
+
 /* --------------------------------------------- JavaScript Objects--------------------------------------- */
