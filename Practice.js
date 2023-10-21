@@ -1,4 +1,16 @@
-//To find the length of string use ".length"
+//Declaration in JavaScript --> var, const, let
+var testVar = 0; //Can declare many times
+var testVar = 5;
+
+const testConst = 1; //Cannot change the value
+// testConst = 5; 
+
+let testLet = 5; //Cannot re-declare 
+// var testLet = 1; 
+
+
+
+/* ----------------------------------------------To find the length of string use ".length" -------------------------------------------- */
 var lengthOfString = 0;
 const String = "Mark Phornphat"
 lengthOfString = String.length; //Space character between "Mark" and "Phornphat" is also counted.
@@ -708,22 +720,68 @@ function updateRecords(records, id, prop, value)
 }
 
 updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+/* --------------------------------------------- Iterative --------------------------------------- */
+const myArray = [];
+
+var i = 5;
+while (i >= 0) //Using while loop
+{
+  myArray.push(i);
+  i--;
+  console.log(myArray);
+}
+
+for(var i = 1; i<=5; i++) //Using for loop
+{
+  myArray.push(i); 
+}
+// Output: [ 5, 4, 3, 2, 1, 0 ]
+
 /* --------------------------------------------- JavaScript Objects--------------------------------------- */
+function multiplyAll(arr) {
+  let product = 1;
+  for(var i = 0; i< arr.length; i++)
+  {
+    for(var j = 0; j< arr[i].length; j++)
+    {
+      product *= arr[i][j];
+    }
+  }
+  return product;
+}
 
+multiplyAll([[1, 2], [3, 4], [5, 6, 7]]); //Output: 5040
+multiplyAll([[1], [2], [3]]); //Output: 6
 
+/* --------------------------------------------- Do...While Loops --------------------------------------- */
+i = 10;
+var temp = [];
+do { //KEYWORD!!!! --> DO before get in a loop
+  temp.push(i);
+  i--;
+}while(i<10 && i>=1); 
 
-/* --------------------------------------------- JavaScript Objects--------------------------------------- */
+console.log(temp); //[ 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 ]
 
+/* --------------------------------------------- Replace Loops using Recursion --------------------------------------- */
+/*  
+  function multiply(arr, n) {
+    let product = 1;
+    for (let i = 0; i < n; i++) {
+      product *= arr[i];
+    }
+    return product;
+  }
+  */  // Change function to "RECURSIVE"
 
-
-/* --------------------------------------------- JavaScript Objects--------------------------------------- */
-
-
-
-/* --------------------------------------------- JavaScript Objects--------------------------------------- */
-
-
-
+  function multiply(arr, n) {
+    if (n <= 0) {
+      return 1;
+    } else {
+      return multiply(arr, n - 1) * arr[n - 1];
+    }
+  }
+  console.log(multiply([1,2,3],3));
 /* --------------------------------------------- JavaScript Objects--------------------------------------- */
 
 
