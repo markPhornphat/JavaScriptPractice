@@ -914,5 +914,55 @@ function rangeOfNumbers(startNum, endNum)
 };
 
 console.log("\nCreate Range of numbers by using 'recursion': " + rangeOfNumbers(6, 9));
+console.log("--------------------------------END OF JAVASCRIPT-----------------------------------\n\n");
+/* -------------------------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------------------- */
+/* -------------------------------------------------ESP6 Course-------------------------------------------- */
+/* -------------------------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------------------- */
+console.log("--------------------------------WELCOME ES6-----------------------------------\n");
 
-/* --------------------------------------------- JavaScript Objects--------------------------------------- */
+/* -----------------------------------------Difference btw. let and var-------------------------------------- */
+
+var printNumTwo;
+for (var i = 0; i < 3; i++) { //At the end of the loop --> i = 3
+  if (i === 2) {
+    printNumTwo = function() { //ถ้าเอา i เข้าฟังชั่น --> เจ๋ง ==> เพราะว่าตัวแปร var เป็นของ Global variable ไม่ใช่ local
+      return i;
+    };
+  }
+}
+
+console.log("Test 'var' i = " + printNumTwo()); //var act as global variable --> 3 will be refered to printNumTwo
+
+////////////////////////////////////// For 'let' variable
+let printNumTwo1;
+for (let i = 0; i < 3; i++) {  // i declared within the for loop statement it will not occur on Global variable
+  if (i === 2) {
+    printNumTwo1 = function() { //ในกรณีนี้จะ print i = 2 เนื้องจากเป็น local variable เนื้อจาก let คือ local variable
+      return i;
+    };
+  }
+}
+console.log("Test 'let' i = " + printNumTwo1());
+// console.log(i); i is not defined, since it define at loop 'block'
+
+/* ----------------------------------------- const. -------------------------------------- */
+
+// const --> Can't change the data inside ==> except: function, object, array are still mutable(able to change)
+
+const s = [5, 6, 7];
+// s = [1, 2, 3]; //Error! Can't change entire object
+s[2] = 45; // Can change
+console.log(s);
+
+/* -----------------------------------------To prevent const. object change value-------------------------------------- */
+
+let obj = {
+  name:"FreeCodeCamp",
+  review:"Awesome"
+};
+Object.freeze(obj);
+obj.review = "bad";
+obj.newProp = "Test";
+console.log(obj); 
