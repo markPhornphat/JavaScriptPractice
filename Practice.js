@@ -489,13 +489,10 @@ cc(2); cc(3); cc(7); cc('K'); cc('A');
 
 /* --------------------------------------------- JavaScript Objects--------------------------------------- */
 const myDog = {
-  // Only change code below this line
   "name": "NamTan",
   "legs": 4,
   "tails": 1,
   friends: ["Mark", "Tan"] //JS automatic change into string
-
-  // Only change code above this line
 };
 
 /* --------------------------------------------- Accessing Object JS with Dot and Bracket--------------------- */
@@ -628,6 +625,7 @@ const myFamily = [
   }
 ];
 
+console.log(myFamily[0]["Name"]);
 
 /* --------------------------------------------- Accessing Nested Objects --------------------------------------- */
 
@@ -782,40 +780,139 @@ console.log(temp); //[ 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 ]
     }
   }
   console.log(multiply([1,2,3],3));
+
+/* --------------------------------------------- Profile Lookup --------------------------------------- */
+const contacts = [
+  {
+    firstName: "Akira",
+    lastName: "Laine",
+    number: "0543236543",
+    likes: ["Pizza", "Coding", "Brownie Points"],
+  },
+  {
+    firstName: "Harry",
+    lastName: "Potter",
+    number: "0994372684",
+    likes: ["Hogwarts", "Magic", "Hagrid"],
+  },
+  {
+    firstName: "Sherlock",
+    lastName: "Holmes",
+    number: "0487345643",
+    likes: ["Intriguing Cases", "Violin"],
+  },
+  {
+    firstName: "Kristian",
+    lastName: "Vos",
+    number: "unknown",
+    likes: ["JavaScript", "Gaming", "Foxes"],
+  },
+];
+
+function lookUpProfile(name, prop) {
+  for(var i = 0; i < contacts.length ; i++)
+  {
+    if(contacts[i]["firstName"] == name)
+    {
+      if(contacts[i].hasOwnProperty(prop))
+      {
+        return contacts[i][prop];
+      }
+      else
+      {
+        return "No such property";
+      }
+    }
+    else if(i == 3)
+    {
+      return "No such contact";
+    }
+  }
+}
+
+lookUpProfile("Kristian", "likes"); //Check the firstname --> If exists --> Return value of prop 
+
+
+/* --------------------------------------------- Generate Random Fractions with JavaScript --------------------------------------- */
+
+var ranNum = Math.random(); //Generate random decimal number between [0,1)  เอา 0 ถึง ไม่เอา 1 |  between 0 (inclusive) and 1 (exclusive).
+console.log(ranNum);
+
+
+/* --------------------------------------------- Generate Random Whole Numbers with JavaScript --------------------------------------- */
+
+var ranNum = Math.floor(Math.random() * 10); //Generate whole number between 0 - 9
+console.log(ranNum);
+
+/* --------------------------------------------- Generate Random Whole Numbers within a Range --------------------------------------- */
+
+function randomRange(myMin, myMax) {
+  return Math.floor( Math.random() * (myMax - myMin + 1) + myMin); //Specify the minimum number and maximum number 
+}
+
+console.log( randomRange(0,9));
+
+/* --------------------------------------------- Use the parseInt Function and Radix (Second Parameter) --------------------------------------- */
+
+const parse = parseInt("007"); //Convert String to number integer 
+const parseString = parseInt("Halloween!") // IF the firtst character is string --> Can't convert to a number --> NaN
+const parseBinary = parseInt("11", 2); //Can set based number at second parameter to convert number from that based to decimal
+
+console.log(parse);
+console.log(parseString);
+console.log("Convert binary to decimal: " + parseBinary);
+
+/* --------------------------------------------- Use the Conditional (Ternary) Operator --------------------------------------- */
+
+function checkEqual(a, b) {
+  return a == b ? "Equal" : "Not Equal"  // a ? b : c  WHERE a is condition, b is if the condiction is true , c is when the condition is false  
+}
+
+console.log(checkEqual(1, 2));
+
+/* --------------------------------------------- Use Multiple Conditional (Ternary) Operators --------------------------------------- */
+
+function checkSign(num) {   // Ternary operators with IF-ELSE
+  return num == 0 ? "zero"
+  : (num > 0) ? "positive"
+  : "negative"
+}
+
+console.log(checkSign(10));
+
+/* --------------------------------------------- Use Recursion to Create a Countdown --------------------------------------- */
+
+function countdown(n){
+  if(n<1)
+  {
+    return [];
+  }
+  else
+  {
+    var countedArray = countdown(n-1);
+    countedArray.unshift(n);
+    return countedArray;
+  }
+}
+
+console.log("Recursive countdown: " + countdown(10));
+
+
 /* --------------------------------------------- JavaScript Objects--------------------------------------- */
+function rangeOfNumbers(startNum, endNum) 
+{
+  if(endNum < startNum)
+  {
+    return [];
+  }
+  else
+  {
+    var countArray = rangeOfNumbers(startNum, endNum - 1);
+    countArray.push(endNum);
+    return countArray; 
+  }
+};
 
-
-
-/* --------------------------------------------- JavaScript Objects--------------------------------------- */
-
-
-
-/* --------------------------------------------- JavaScript Objects--------------------------------------- */
-
-
-
-/* --------------------------------------------- JavaScript Objects--------------------------------------- */
-
-
-
-/* --------------------------------------------- JavaScript Objects--------------------------------------- */
-
-
-
-/* --------------------------------------------- JavaScript Objects--------------------------------------- */
-
-
-
-/* --------------------------------------------- JavaScript Objects--------------------------------------- */
-
-
-
-/* --------------------------------------------- JavaScript Objects--------------------------------------- */
-
-
-
-/* --------------------------------------------- JavaScript Objects--------------------------------------- */
-
-
+console.log("\nCreate Range of numbers by using 'recursion': " + rangeOfNumbers(6, 9));
 
 /* --------------------------------------------- JavaScript Objects--------------------------------------- */
